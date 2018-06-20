@@ -6,6 +6,7 @@
 * [Hbase](/hbase.md)
 * [Hive](/hive.md)
 * [Spark](/spark.md)
+* [Hadoop与Spark](/hadoopyu-spark.md)
 
 ### Hadoop {#hadoop}
 
@@ -39,11 +40,7 @@ HBase解决了什么问题？
 解决了什么问题？  
 答：解决Hadoop只适用于离线数据处理，而不能提供实时数据处理能力的问题。
 
-
-
 ### Hadoop和Spark的联系和区别
-
-
 
 ### 计算数据存储位置
 
