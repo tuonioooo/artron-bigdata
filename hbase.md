@@ -68,5 +68,5 @@ HLog Sequece File的Value是HBase的KeyValue对象，即对应HFile中的KeyValu
 
 
 
-
+文档参考：[http://hbase.apache.org/book.html](http://hbase.apache.org/book.html)
 
