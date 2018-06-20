@@ -1,4 +1,44 @@
 # HBase
 
-HBase是一个分布式的、面向列的开源数据库，该技术来源于 Fay Chang 所撰写的Google论文“Bigtable：一个结构化数据的[分布式存储系统](https://baike.baidu.com/item/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F)”。就像Bigtable利用了Google文件系统（File System）所提供的分布式数据存储一样，HBase在Hadoop之上提供了类似于Bigtable的能力。HBase是Apache的Hadoop项目的子项目。HBase不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库。另一个不同的是HBase基于列的而不是基于行的模式。
+HBase是一个分布式的、面向列的开源数据库，该技术来源于 Fay Chang 所撰写的Google论文“Bigtable：一个结构化数据的[分布式存储系统](https://baike.baidu.com/item/分布式存储系统)”。就像Bigtable利用了Google文件系统（File System）所提供的分布式数据存储一样，HBase在Hadoop之上提供了类似于Bigtable的能力。HBase是Apache的Hadoop项目的子项目。HBase不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库。另一个不同的是HBase基于列的而不是基于行的模式。
+
+## 结构介绍
+
+HBase – Hadoop Database，是一个高可靠性、高性能、面向列、可伸缩的分布式存储系统，利用HBase技术可在廉价PC Server上搭建起大规模结构化存储集群。
+
+与FUJITSU Cliq等商用大数据产品不同，HBase是Google Bigtable的开源实现，类似Google Bigtable利用GFS作为其文件存储系统，HBase利用Hadoop HDFS作为其文件存储系统；Google运行MapReduce来处理Bigtable中的海量数据，HBase同样利用Hadoop MapReduce来处理HBase中的海量数据；Google Bigtable利用 Chubby作为协同服务，HBase利用Zookeeper作为对应。
+
+![](/assets/hbase-01.png)
+
+上图描述Hadoop EcoSystem中的各层系统。其中,HBase位于结构化存储层，Hadoop HDFS为HBase提供了高可靠性的底层存储支持，Hadoop MapReduce为HBase提供了高性能的计算能力，Zookeeper为HBase提供了稳定服务和failover机制。
+
+此外，Pig和Hive还为HBase提供了高层语言支持，使得在HBase上进行数据统计处理变的非常简单。 Sqoop则为HBase提供了方便的RDBMS数据导入功能，使得[传统数据库](https://baike.baidu.com/item/%E4%BC%A0%E7%BB%9F%E6%95%B0%E6%8D%AE%E5%BA%93)数据向HBase中迁移变的非常方便。
+
+## 模型
+
+主要讨论逻辑模型和物理模型
+
+（1）逻辑模型
+
+Hbase的名字的来源是Hadoop database，即[hadoop](https://baike.baidu.com/item/hadoop)数据库。主要是从用户角度来考虑，即如何使用Hbase。
+
+（2）物理模型
+
+主要从实现Hbase的角度来讨论
+
+## 访问接口
+
+1. Native Java API，最常规和高效的访问方式，适合Hadoop MapReduce Job并行[批处理](https://baike.baidu.com/item/%E6%89%B9%E5%A4%84%E7%90%86)HBase表数据
+
+2. HBase Shell，HBase的命令行工具，最简单的接口，适合HBase管理使用
+
+3. Thrift Gateway，利用Thrift序列化技术，支持C++，PHP，Python等多种语言，适合其他异构系统在线访问HBase表数据
+
+4. REST Gateway，支持REST 风格的Http API访问HBase, 解除了语言限制
+
+5. Pig，可以使用Pig Latin流式编程语言来操作HBase中的数据，和Hive类似，本质最终也是编译成MapReduce Job来处理HBase表数据，适合做数据统计
+
+6. Hive，当前Hive的[Release版本](https://baike.baidu.com/item/Release%E7%89%88%E6%9C%AC)尚没有加入对HBase的支持，但在下一个版本Hive 0.7.0中将会支持HBase，可以使用类似SQL语言来访问HBase
+
+
 
