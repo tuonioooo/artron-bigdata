@@ -5,6 +5,7 @@
 * [Hadoop](hadoop.md)
 * [Hbase](/hbase.md)
 * [Hive](/hive.md)
+* [Spark](/spark.md)
 
 ### Hadoop {#hadoop}
 
@@ -37,4 +38,34 @@ HBase解决了什么问题？
 
 解决了什么问题？  
 答：解决Hadoop只适用于离线数据处理，而不能提供实时数据处理能力的问题。
+
+
+
+### Hadoop和Spark的联系和区别
+
+
+
+### 计算数据存储位置
+
+Hadoop：硬盘
+
+Spark：内存
+
+### 计算模型
+
+Hadoop：单一
+
+Spark：丰富
+
+### 处理方式
+
+Hadoop：非迭代
+
+Spark：迭代
+
+### 场景要求
+
+Hadoop：离线批处理。（面对SQL交互式查询、实时处理及机器学习等需要和第三方框架结合。多种数据格式转换，导致消耗大量资源）
+
+Spark：批处理、实时处理
 
