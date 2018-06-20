@@ -1,4 +1,4 @@
-##什么是Hadoop
+## 什么是Hadoop
 
 **Hadoop**，是一个由Apache基金会所开发的分布式系统基础架构。 用户可以在不了解分布式底层细节的情况下，开发分布式程序。充分利用集群的威力进行高速运算和存储。
 
@@ -6,7 +6,7 @@ Hadoop实现了一个分布式文件系统（Hadoop Distributed File System）�
 
 Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。
 
-##Hadoop起源
+## Hadoop起源
 
 ###项目起源
 
